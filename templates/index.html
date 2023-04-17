@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'bootstrap.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid w-50">
+        <div class="card d-flex justify-content-center m-10">
+            <h2>Input image</h2>
+            <form action="http://localhost:5000/predict" method="POST" class="p-3" enctype="multipart/form-data">
+                <input type="file" required name="image" accept="image/*" class = "form-control m-10">
+                <input type="submit" value="submit" class="btn btn-primary text-center">
+            </form>
+
+            <p>Output : </p>
+            <img src="{{url_for('static', filename = result)}}" alt="">
+        </div>
+    </div>
+   
+</body>
+</html>
